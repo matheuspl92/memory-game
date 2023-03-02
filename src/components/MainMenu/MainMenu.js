@@ -1,16 +1,13 @@
-import { useState } from "react";
 import { Button, Col, Container, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 
-const MainMenu = ({ startGame }) => {
-    const [diff, setDiff] = useState(1);
+const MainMenu = ({ diff, setDiff, startGame }) => {
 
     const handleToggle = (value) => {
         setDiff(value);
-        console.log(value);
     };
 
     const handlePlay = () => {
-        startGame(diff);
+        startGame();
     };
 
     return (

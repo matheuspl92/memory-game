@@ -5,8 +5,9 @@ import MainMenu from './components/MainMenu/MainMenu';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [diff, setDiff] = useState(1);
 
-  const startGame = (diff) => {
+  const startGame = () => {
     setIsPlaying(true);
   };
 
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      {(isPlaying) ? <GameScreen endGame={endGame}/> : <MainMenu startGame={startGame} />}
+      {(isPlaying) ? <GameScreen diff={diff} endGame={endGame}/> : <MainMenu diff={diff} setDiff={setDiff} startGame={startGame} />}
     </div>
   );
 }

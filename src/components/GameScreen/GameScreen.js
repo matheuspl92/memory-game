@@ -14,8 +14,8 @@ const GameScreen = ({ endGame }) => {
         <Container>
             <Col>
                 <Row className="justify-content-md-center">
-                    <h5>High Score: 10</h5>
-                    <h3>Score: 2</h3>
+                    <h5>High Score: {highScore}</h5>
+                    <h3>Score: {score}</h3>
                 </Row>
                 <Row>
                     <GameBoard />
