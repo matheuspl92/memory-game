@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
+import GameScreen from './components/GameScreen/GameScreen';
 import MainMenu from './components/MainMenu/MainMenu';
 
 function App() {
@@ -9,9 +10,13 @@ function App() {
     setIsPlaying(true);
   };
 
+  const endGame = () => {
+    setIsPlaying(false);
+  };
+
   return (
     <div className="App">
-      {(isPlaying) ? null : <MainMenu startGame={startGame} />}
+      {(isPlaying) ? <GameScreen endGame={endGame}/> : <MainMenu startGame={startGame} />}
     </div>
   );
 }
