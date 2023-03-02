@@ -75,3 +75,5 @@ const getImagesArray = (diff) => {
     return shuffleArray(removedArray);
 
 }
+
+export default getImagesArray;
