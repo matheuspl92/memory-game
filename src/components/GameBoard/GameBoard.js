@@ -1,8 +1,12 @@
-const GameBoard = () => {
+import { Container, Image } from "react-bootstrap";
+
+const GameBoard = ({ diff }) => {
+    
+
     return (
-        <div>
-            GameBoard
-        </div>
+        <Container>
+            
+        </Container>
     )
 };
 
