@@ -3,7 +3,7 @@ import { Container, Image } from "react-bootstrap";
 import getImagesArray from "../../aux_methods/getImagesArray";
 import shuffleArray from "../../aux_methods/shuffleArray";
 
-const GameBoard = ({ diff }) => {
+const GameBoard = ({ diff, scorePoint, clearScore }) => {
     const [images, setImages] = useState(getImagesArray(diff));
     const [imagesClicked, setImagesClicked] = useState([]);
 
@@ -11,9 +11,11 @@ const GameBoard = ({ diff }) => {
         const value = event.target.id;
         if(imagesClicked.includes(value)) {
             setImagesClicked([]);
+            clearScore();
             console.log('lost');
         } else {
             setImagesClicked(imagesClicked.concat([value]));
+            scorePoint();
             console.log('pushed ' + value);
         }
         setImages(shuffleArray(images));
