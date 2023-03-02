@@ -4,9 +4,14 @@ import MainMenu from './components/MainMenu/MainMenu';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const startGame = (diff) => {
+    setIsPlaying(true);
+  };
+
   return (
     <div className="App">
-      {(isPlaying) ? null : <MainMenu />}
+      {(isPlaying) ? null : <MainMenu startGame={startGame} />}
     </div>
   );
 }

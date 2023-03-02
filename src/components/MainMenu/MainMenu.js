@@ -1,6 +1,17 @@
+import { useState } from "react";
 import { Button, Col, Container, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 
-const MainMenu = () => {
+const MainMenu = ({ startGame }) => {
+    const [diff, setDiff] = useState(1);
+
+    const handleToggle = (value) => {
+        setDiff(value);
+        console.log(value);
+    };
+
+    const handlePlay = () => {
+        startGame(diff);
+    };
 
     return (
         <Container>
@@ -13,7 +24,7 @@ const MainMenu = () => {
                     <p>Now press play and click on the animal pictures, but don't click on the same one twice! Try to get a perfect score!</p>
                 </Col>
                 <Col>
-                    <ToggleButtonGroup type="radio" name="difficulty" defaultValue={1}>
+                    <ToggleButtonGroup type="radio" name="difficulty" defaultValue={diff} onChange={handleToggle}>
                         <ToggleButton id="tbg-radio-1" value={1}>
                             Easy
                         </ToggleButton>
@@ -24,7 +35,7 @@ const MainMenu = () => {
                             Hard
                         </ToggleButton>
                     </ToggleButtonGroup>
-                    <Button>Play</Button>
+                    <Button onClick={handlePlay}>Play</Button>
                 </Col>
             </Row>
         </Container>
