@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Animal-font;
+    src: url('../../fonts/TheMonkey-Regular.ttf');
+  }
+
+#main-menu-container {
+    background-color: rgba(153, 90, 31, 0.884);
+    padding: 8px;
+    border-radius: 16px;
+    box-shadow: 8px 8px 32px black;
+}
+
+#main-menu-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(39, 39, 39);
+}
+
+#main-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#title {
+    font-family: Animal-font;
+    font-size: 4em;
+    padding: 16px;
+    color: rgb(39, 39, 39);
+}
+
+span {
+    display: block;
+    width: 100%;
+    border-top: 1px solid black;
+    margin-bottom: 16px;
+}

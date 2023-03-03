@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import GameScreen from './components/GameScreen/GameScreen';
 import MainMenu from './components/MainMenu/MainMenu';
+import './App.css';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
