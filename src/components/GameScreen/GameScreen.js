@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap"
 import GameBoard from "../GameBoard/GameBoard";
+import "./GameScreen.css";
 
 const GameScreen = ({ diff, endGame }) => {
     const [score, setScore] = useState(0);
@@ -25,17 +26,19 @@ const GameScreen = ({ diff, endGame }) => {
     }, [score, highScore, diff]);
 
     return (
-        <Container>
+        <Container id="game-screen-container">
             <Col>
-                <Row className="justify-content-md-center">
-                    <h5>High Score: {highScore}{(hasPerfectScore) ? ' - Perfect' : null}</h5>
-                    <h3>Score: {score}</h3>
+                <Row>
+                    <div id="game-screen-score">
+                        <h5>High Score: {highScore}{(hasPerfectScore) ? ' - Perfect' : null}</h5>
+                        <h3>Score: {score}</h3>
+                    </div>
                 </Row>
                 <Row>
                     <GameBoard diff={diff} scorePoint={scorePoint} clearScore={clearScore} />
                 </Row>
                 <Row>
-                    <Button onClick={handleReturn}>Return to Main Menu</Button>
+                    <Button variant="success" onClick={handleReturn}>Return to Main Menu</Button>
                 </Row>
             </Col>
         </Container>

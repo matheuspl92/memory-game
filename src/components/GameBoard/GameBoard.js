@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import getImagesArray from "../../aux_methods/getImagesArray";
 import shuffleArray from "../../aux_methods/shuffleArray";
+import "./GameBoard.css";
 
 const GameBoard = ({ diff, scorePoint, clearScore }) => {
     const [images, setImages] = useState(getImagesArray(diff));
@@ -9,7 +10,7 @@ const GameBoard = ({ diff, scorePoint, clearScore }) => {
 
     const handleClick = (event) => {
         const value = event.target.id;
-        if(imagesClicked.includes(value)) {
+        if (imagesClicked.includes(value)) {
             setImagesClicked([]);
             clearScore();
             console.log('lost');
@@ -23,9 +24,11 @@ const GameBoard = ({ diff, scorePoint, clearScore }) => {
 
     return (
         <Container>
-            {images.map(({ title, fileName }) => {
-                return <Image roundedCircle key={title} id={title} src={`images/${fileName}.jpg`} height={250} width={250} onClick={handleClick} />
-            })}
+            <div id="gameboard-gallery">
+                {images.map(({ title, fileName }) => {
+                    return <Image className="animal-img" roundedCircle key={title} id={title} src={`images/${fileName}.jpg`} height={150} width={150} onClick={handleClick} />
+                })}
+            </div>
         </Container>
     )
 };
